@@ -957,6 +957,7 @@ const ModalizeBase = (
         enabled={panGestureEnabled}
       >
         <View style={s.modalize__wrapper} pointerEvents="box-none">
+          {withOverlay && renderOverlay()}
           {showContent && (
             <AnimatedKeyboardAvoidingView {...keyboardAvoidingViewProps}>
               {renderHandle()}
@@ -965,8 +966,6 @@ const ModalizeBase = (
               {renderComponent(FooterComponent, 'footer')}
             </AnimatedKeyboardAvoidingView>
           )}
-
-          {withOverlay && renderOverlay()}
         </View>
       </TapGestureHandler>
 
